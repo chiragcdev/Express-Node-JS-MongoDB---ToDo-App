@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link href="/css/style.css" rel="stylesheet">
+    <title>Update Todo</title>
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="container">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="mt-4 mb-4">Update Task</h1>
+            <form class="box-shadow" action="/update/<%= result._id %>" method="POST">
+                <div class="mb-3">
+                    <input type="text" value="<%= result.title %>" name="title" class="form-control" id="title" placeholder="Enter task title">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="description" id="description" rows="5" placeholder="Enter task description"><%= result.description %></textarea>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary full-width">Update Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/bootstrap.bundle.min.js"></script>
+</body>
+</html>
